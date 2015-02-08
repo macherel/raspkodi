@@ -1,0 +1,67 @@
+{
+	"gpio": [ 11, 12, 13, 15, 16, 18, 22 ],
+	"kodi": {
+
+		"ip": "127.0.0.1",
+		"port": 8080,
+		"username": "kodi",
+		"password": "kodi",
+		"init": [
+			{
+				"method": "Player.Stop",
+				"parameters": {
+					"playerid": 1
+				}
+			},
+			{
+				"method": "Playlist.Clear",
+				"parameters": {
+					"playlistid": 1
+				}
+			},
+			{
+				"method": "Playlist.Add",
+				"parameters": {
+					"playlistid": 1,
+					"item": {"file": "/home/pi/movies/1.avi"}
+				}
+			},
+			{
+				"method": "Playlist.Add",
+				"parameters": {
+					"playlistid": 1,
+					"item": {"file": "/home/pi/movies/2.avi"}
+				}
+			},
+			{
+				"method": "Player.Open",
+				"parameters": {
+					"item": {"playlistid": 1}
+				}
+			}
+		],
+		"actions": [
+			{
+				"method": "Player.GoTo",
+				"parameters": {
+					"playerid": 1,
+					"to":0
+				}
+			},
+			{
+				"method": "Player.GoTo",
+				"parameters": {
+					"playerid": 1,
+					"to":1
+				}
+			},
+			{
+				"method": "Player.PlayPause",
+				"parameters": {
+					"playerid": 1
+				}
+			}
+
+		]
+	}
+}
